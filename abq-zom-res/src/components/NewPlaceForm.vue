@@ -1,6 +1,6 @@
 <template>
     <section>
-        <b-form @submit="onSubmit" @reset="" v-if="show">
+        <b-form @submit="onSubmit" @reset="onReset" v-if="show">
             <!-- place name -->
             <b-form-group id="name"
                         label="Place Name: "
@@ -86,7 +86,7 @@ export default {
         this.form.checked = [];
         /* Trick to reset/clear native browser form validation state */
         this.show = false;
-        this.$nextTick(() => { this.show = true });
+        // this.$nextTick(() => { this.show = true });
         }
     } 
 }
