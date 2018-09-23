@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section class="container">
         <b-form @submit="onSubmit" @reset="onReset" v-if="show">
             <!-- place name -->
             <b-form-group id="name"
@@ -28,7 +28,9 @@
                         >
                 <b-form-input id="lat-input"
                             type="text"
-                            placeholder="latitude(numeric)">
+                            placeholder="latitude(numeric)"
+                            v-model="form.lat"
+                            >
                 </b-form-input>
             </b-form-group>
             <!-- longitude -->
@@ -38,7 +40,9 @@
                         >
                 <b-form-input id="long-input"
                             type="text"
-                            placeholder="longitude(numeric)">
+                            placeholder="longitude(numeric)"
+                            v-model="form.long"
+                            >
                 </b-form-input>
             </b-form-group>
             <!-- description -->
@@ -59,11 +63,18 @@
 
 <script>
 export default {
+    name: 'NewPlaceForm',
+    props: {
+
+    },
     data () {
         return {
         form: {
-            name: '',
+            name: "",
             type: null,
+            lat: 0,
+            long: 0,
+            details: ""
         },
         types: [
             { text: 'Select One', value: null },
@@ -80,12 +91,13 @@ export default {
         onReset (evt) {
         evt.preventDefault();
         /* Reset our form values */
-        this.form.email = '';
-        this.form.name = '';
-        this.form.food = null;
-        this.form.checked = [];
+        this.form.name = ''
+        this.form.type = null
+        this.form.lat = 0
+        this.form.long = 0 
+        // this.form.checked = [];
         /* Trick to reset/clear native browser form validation state */
-        this.show = false;
+        // this.show = false;
         // this.$nextTick(() => { this.show = true });
         }
     } 
