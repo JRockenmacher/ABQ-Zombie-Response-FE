@@ -36,7 +36,7 @@ export default {
     }),
 
     mounted() {
-        const placeAPI = 'http://localhost:3000/places'
+        const placeAPI = 'https://abq-zom-res.herokuapp.com/places'
         return fetch(placeAPI)
         .then((res) => res.json())
         .then((data) => {
