@@ -4,7 +4,7 @@
         :center="center"
         :zoom="13"
         map-type-id="terrain"
-        style="width:1000px; height:600px"
+        style="width: 70vw; height: 42vh; max-width: 900px"
         >
         <GmapMarker
             :key="index"
@@ -21,15 +21,31 @@
 <script>
 export default {
   name: 'place-map',
-//   props: ['name'],
+  props: ['places'],
     data: function () {
         return {
             center: {lat:35.106766, lng:-106.629181},
             markers: [
                 {
-                    position: {lat: 35.0883, lng: -106.617}
+                    position: {lat: 35.0883, lng: -106.617},
+                    infoText: "University Hospital",
                 }
-            ]
+            ],
+            infoContent: '',
+            infoWindowPos: {
+                lat: 0,
+                lng: 0
+            },
+            infoWinOpen: false,
+            currentMidx: null,
+            //optional: offset infowindow so it visually sits nicely on top of our marker
+            infoOptions: {
+                pixelOffset: {
+                    width: 0,
+                    height: -35
+                }
+            },
+
         }
     }
 };

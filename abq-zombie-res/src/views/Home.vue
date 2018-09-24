@@ -1,11 +1,11 @@
 <template>
-    <section>
+    <section class="container">
         <div class="top-nav">
             <nav-bar />
         </div>
             <choose-coordinates-form 
             />
-        <section class="container map-container-group">
+        <section class="map-container-group">
             <b-button-group vertical size="lg">
                 <b-button variant="success">Food</b-button>
                 <b-button variant="warning">Landmarks</b-button>
