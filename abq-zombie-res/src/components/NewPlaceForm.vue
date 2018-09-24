@@ -1,5 +1,6 @@
 <template>
     <section class="container">
+        <!-- how to get float datatype instead of a string on the form input -->
         <b-form @submit="onSubmit" @reset="onReset" v-if="show">
             <!-- place name -->
             <b-form-group id="name"
@@ -27,7 +28,8 @@
                         label-for="lat-input"
                         >
                 <b-form-input id="lat-input"
-                            type="text"
+                            type="number"
+                            step="any"
                             placeholder="latitude(numeric)"
                             v-model="form.lat"
                             >
@@ -39,7 +41,8 @@
                         label-for="long-input"
                         >
                 <b-form-input id="long-input"
-                            type="text"
+                            type="number"
+                            step="any"
                             placeholder="longitude(numeric)"
                             v-model="form.long"
                             >
