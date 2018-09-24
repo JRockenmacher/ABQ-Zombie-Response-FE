@@ -14,6 +14,7 @@
             <place-map 
             :places="places"/>
         </section>
+            <new-place-form />
     </section>
 </template>
 
@@ -21,13 +22,14 @@
 import ChooseCoordinatesForm from '@/components/ChooseCoordinatesForm.vue'
 import NavBar from '@/components/NavBar.vue' 
 import PlaceMap from '@/components/PlaceMap.vue'
-
+import NewPlaceForm from '@/components/NewPlaceForm.vue'
 export default {
     name: 'home',
     components: {
         ChooseCoordinatesForm,
         NavBar,
-        PlaceMap
+        PlaceMap,
+        NewPlaceForm
 
     },
 
